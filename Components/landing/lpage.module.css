@@ -1,0 +1,125 @@
+/* Fit the image to the div */
+.header__image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Ensures any overflow is hidden */
+  border-radius: 10px; /* Adds rounded corners to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+.myh1 {
+  margin-top: -100px;
+}
+
+.header__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Container and text adjustments */
+.header__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem; /* Reduced gap */
+}
+
+.header__content {
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.header__content h2 {
+  position: relative;
+  max-width: fit-content;
+  margin: 0 auto 0.5rem auto; /* Reduced bottom margin */
+  font-size: 2rem; /* Increased font size */
+  font-weight: 500;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.header__content h2::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-100% - 1rem), -50%);
+  height: 2px;
+  width: 150%;
+  background-color: var(--white);
+}
+
+.header__content h1 {
+  font-size: 4rem; /* Increased font size */
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.4; /* Increased line height */
+  margin-bottom: 0.5rem; /* Reduced bottom margin */
+}
+
+.h1__span1 {
+  font-size: 3rem; /* Increased font size */
+  color: var(--primary-color);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.h1__span2 {
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: 400;
+  display: block;
+}
+
+.header__content p {
+  margin-bottom: 1rem; /* Reduced bottom margin */
+  color: var(--text-light);
+  font-size: 1.2rem; /* Increased font size */
+  line-height: 1.6; /* Increased line height */
+}
+
+.header__btn .btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1.2rem; /* Increased font size */
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 3rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.header__btn .btn:hover {
+  color: var(--primary-color);
+  background-color: var(--white);
+}
+
+.header__bar {
+  font-size: 1rem; /* Increased font size */
+  color: var(--text-light);
+  text-align: center; /* Center the copyright text */
+  margin-top: 1rem; /* Added margin-top for better spacing */
+}
+
+@media (min-width: 768px) {
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
+  }
+
+  .header__content {
+    text-align: left;
+  }
+}
